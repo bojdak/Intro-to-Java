@@ -22,7 +22,7 @@ public class AverageCalculator {
             while (validEntry) {
                 System.out.print("Enter test score " + (i + 1) + " Between 0 and 110: ");
                 double testScore = input.nextDouble();
-                if (testScore <= 100 && testScore >= 0) {
+                if (testScore >=0 && testScore <= 100) {
                 testScores[i] = testScore;
         // Adds the test scores to the sum variable
                 sum = sum + testScores[i];
