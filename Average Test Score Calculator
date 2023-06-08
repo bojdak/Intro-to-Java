@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class AverageCalculator {
+    public static void main(String[] args) {
+        // Scanner to allow for input
+        Scanner input = new Scanner(System.in);
+        System.out.println("This is the Average Test Score Calculator!");
+        System.out.print("Enter the number of tests that are required for calculation: ");
+        
+        // Variable to store the number of entries
+        int entries = input.nextInt();
+        
+        // Array to store test scores which in terms of size is equal to the number of entries inputted 
+        double[] testScores = new double[entries];
+
+        // Variable declared and initialized to 0 to keep track of the sum for inputted test scores
+        double sum = 0;
+
+        // Inputting test score values and checking if the value is valid (0-110)
+        for (int i = 0; i < entries; i++) {
+            boolean validEntry = true;
+            while (validEntry) {
+                System.out.print("Enter test score " + (i + 1) + " Between 0 and 110: ");
+                double testScore = input.nextDouble();
+                if (testScore <= 100 && testScore >= 0) {
+                testScores[i] = testScore;
+        // Adds the test scores to the sum variable
+                sum = sum + testScores[i];
+        // Exits the loop
+                validEntry = false;
+        // Reprompts the user to enter a valid test score
+        } else {
+            System.out.println("Enter a number between 0 and 110 for a valid entry");
+        }
+    }
+}
+
+        // Calculates the average and displays it to the console
+        double average = (sum / entries);
+        System.out.println("The program is calcuating the average...");
+        System.out.println("The average test score for the class is: " + average + "%");
+
+        // Scanner closed
+        input.close();
+    }
+}
